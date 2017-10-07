@@ -14,7 +14,9 @@ import java.util.List;
  */
 public abstract class AbstractH2Dao<T extends Object> {
 
-    private Connection connection = new Connector().getConnection();
+    private Connection connection =
+            new Connector("sa", "", "jdbc:h2:~/test", "org.h2.Driver")
+                    .getConnection();
 
     /**
      * Возвращает sql запрос для вставки новой записи в базу данных.
@@ -52,7 +54,7 @@ public abstract class AbstractH2Dao<T extends Object> {
     /**
      * Устанавливает аргументы insert или update запроса в соответствии со значением полей объекта object.
      */
-    protected abstract void prepareStatementForInsertOrUpdate(PreparedStatement statement, T object) throws SQLException;
+    protected abstract void prepareStatementForInsertOrUpdate(PreparedStatement statement, T object);
 
     /**
      * Устанавливает аргументы delete запроса в соответствии со значением полей объекта object.
@@ -60,9 +62,9 @@ public abstract class AbstractH2Dao<T extends Object> {
     protected abstract void prepareStatementForDelete(PreparedStatement statement, T object);
 
     /**
-     * Возвращает обьект созданый с помощью операции create используя переопределенные
-     * методи getCreateQuery и prepareStatementForInsertOrUpdate. В качестве аргумента
-     * принимает обьект entity слоя.
+     * В качестве аргумента принимает обьект entity слоя.
+     * @return обьект созданый с помощью операции create используя переопределенные
+     * методи getCreateQuery и prepareStatementForInsertOrUpdate.
      */
     public T createFromObject (T object) throws SQLException{
 
@@ -81,7 +83,7 @@ public abstract class AbstractH2Dao<T extends Object> {
     }
 
     /**
-     * Вовзращает List обьектов entity слоя с помощью операции getAll используя
+     * @return List обьектов entity слоя с помощью операции getAll используя
      * переопределенные методы getCreateQuery и parseResultSet.
      */
     public List<T> getAllObjects () throws SQLException{
@@ -100,7 +102,7 @@ public abstract class AbstractH2Dao<T extends Object> {
     }
 
     /**
-     * Возвращает обект entity слоя по id с помощью операции getById используя
+     * @return обект entity слоя по id с помощью операции getById используя
      * переопределенные методы getCreateQuery и parseResultSet.
      */
     public T getObjectById (Long id) throws SQLException {
@@ -127,7 +129,7 @@ public abstract class AbstractH2Dao<T extends Object> {
     }
 
     /**
-     * Возвращает обект entity слоя по firstId и secondId с помощью операции getById используя
+     * @return обект entity слоя по firstId и secondId с помощью операции getById используя
      * переопределенные методы getCreateQuery и parseResultSet.
      */
     public T getObjectByIds (Long firstId, Long secondId) throws SQLException {

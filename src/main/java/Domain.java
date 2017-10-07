@@ -16,16 +16,16 @@ public class Domain {
     public static void main(String[] args) {
 
         Student student = new Student();
-        student.setId(22L);
+        student.setId(27L);
         student.setFull_name("Alex");
 
         Subjects subjects = new Subjects();
-        subjects.setId(22L);
+        subjects.setId(27L);
         subjects.setSubjectName("Math");
 
         MarksOfStudent marksOfStudent = new MarksOfStudent();
-        marksOfStudent.setStudentId(22L);
-        marksOfStudent.setSubjectId(22L);
+        marksOfStudent.setStudentId(27L);
+        marksOfStudent.setSubjectId(27L);
         marksOfStudent.setMark(5L);
 
         StudentServiceImpl studentService = new StudentServiceImpl();
