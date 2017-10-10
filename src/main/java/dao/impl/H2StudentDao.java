@@ -21,22 +21,22 @@ public class H2StudentDao extends AbstractH2Dao<Student> implements StudentDao {
 
     @Override
     public String getSelectQuery() {
-        return "SELECT ID, FULL_NAME FROM \"student\"";
+        return "SELECT ID, FULL_NAME FROM student";
     }
 
     @Override
     public String getCreateQuery() {
-        return "INSERT INTO \"student\" (ID, FULL_NAME) VALUES (?, ?)";
+        return "INSERT INTO student (ID, FULL_NAME) VALUES (?, ?)";
     }
 
     @Override
     public String getUpdateQuery() {
-        return "UPDATE \"student\" SET FULL_NAME WHERE ID = ?";
+        return "UPDATE student SET FULL_NAME WHERE ID = ?";
     }
 
     @Override
     public String getDeleteQuery() {
-        return "DELETE FROM \"student\" WHERE ID = ?";
+        return "DELETE FROM student WHERE ID = ?";
     }
 
     @Override

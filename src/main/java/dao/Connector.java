@@ -27,7 +27,7 @@ public final class Connector {
      * @param url URL адрес базы данных
      * @param driver Имя драйвера
      */
-    public Connector(String username, String password, String url, String driver) {
+    Connector(String username, String password, String url, String driver) {
         this.username = username;
         this.password = password;
         this.url = url;

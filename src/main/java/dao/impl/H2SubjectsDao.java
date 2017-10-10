@@ -19,22 +19,22 @@ public class H2SubjectsDao extends AbstractH2Dao<Subjects> implements SubjectsDa
 
     @Override
     public String getCreateQuery() {
-        return "INSERT INTO \"subjects\" (ID, SUBJECT_NAME) VALUES (?, ?)";
+        return "INSERT INTO subjects (ID, SUBJECT_NAME) VALUES (?, ?)";
     }
 
     @Override
     public String getSelectQuery() {
-        return "SELECT ID, SUBJECT_NAME FROM \"subjects\"";
+        return "SELECT ID, SUBJECT_NAME FROM subjects";
     }
 
     @Override
     public String getUpdateQuery() {
-        return "UPDATE \"subjects\" SET SUBJECT_NAME WHERE ID=?";
+        return "UPDATE subjects SET SUBJECT_NAME WHERE ID=?";
     }
 
     @Override
     public String getDeleteQuery() {
-        return "DELETE FROM \"subjects\" WHERE ID=?";
+        return "DELETE FROM subjects WHERE ID=?";
     }
 
     @Override

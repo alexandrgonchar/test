@@ -19,22 +19,22 @@ public class H2MarksOfStudentsDao extends AbstractH2Dao<MarksOfStudent>  impleme
 
     @Override
     public String getCreateQuery() {
-        return "INSERT INTO \"marks_of_student\" (STUDENT_ID, SUBJECT_ID, MARK) VALUES (?, ?, ?)";
+        return "INSERT INTO marks_of_student (STUDENT_ID, SUBJECT_ID, MARK) VALUES (?, ?, ?)";
     }
 
     @Override
     public String getSelectQuery() {
-        return "SELECT STUDENT_ID, SUBJECT_ID, MARK FROM \"marks_of_student\"";
+        return "SELECT STUDENT_ID, SUBJECT_ID, MARK FROM marks_of_student";
     }
 
     @Override
     public String getUpdateQuery() {
-        return "UPDATE \"marks_of_student\" SET STUDENT_ID, SUBJECT_ID, MARK";
+        return "UPDATE marks_of_student SET STUDENT_ID, SUBJECT_ID, MARK";
     }
 
     @Override
     public String getDeleteQuery() {
-        return "DELETE FROM \"marks_of_student\" WHERE STUDENT_ID=? AND SUBJECT_ID=?";
+        return "DELETE FROM marks_of_student WHERE STUDENT_ID=? AND SUBJECT_ID=?";
     }
 
     @Override
